@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct ARhackApp: App {
+    
+    @State private var page = "Login"
+    
     var body: some Scene {
+        
         WindowGroup {
-            ContentView()
+            if self.page == "Login" {
+                LoginPage(page: $page)
+            } else if self.page == "Home" {
+                HomePage()
+            }
+            
         }
     }
 }
