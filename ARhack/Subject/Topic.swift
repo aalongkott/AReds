@@ -12,4 +12,6 @@ struct Topic: Identifiable {
     var id: UUID = UUID()
     var name: String
     var detail: String
+    var isAR: Bool
+    var isFav: Bool
 }

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../../../Downloads/ARTutorial_Part3-master/ARGuide.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "self:">
    </FileRef>
 </Workspace>

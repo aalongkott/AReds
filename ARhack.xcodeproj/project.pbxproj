@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2228C635254E9B8700272F96 /* Heart.usdz in Resources */ = {isa = PBXBuildFile; fileRef = 2228C634254E9B8700272F96 /* Heart.usdz */; };
 		22A5E58D254D1A1000CBB9E0 /* ARhackApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E58C254D1A1000CBB9E0 /* ARhackApp.swift */; };
 		22A5E58F254D1A1000CBB9E0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E58E254D1A1000CBB9E0 /* ContentView.swift */; };
 		22A5E591254D1A1200CBB9E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22A5E590254D1A1200CBB9E0 /* Assets.xcassets */; };
@@ -19,9 +20,14 @@
 		22A5E610254D582100CBB9E0 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E60F254D582100CBB9E0 /* Topic.swift */; };
 		22A5E613254D59AF00CBB9E0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E612254D59AF00CBB9E0 /* DetailView.swift */; };
 		22A5E616254D5DC800CBB9E0 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E615254D5DC800CBB9E0 /* HomePage.swift */; };
+		22A5E66A254DAE9600CBB9E0 /* KeyboaedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E669254DAE9600CBB9E0 /* KeyboaedManager.swift */; };
+		22A5E66F254DB1AB00CBB9E0 /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E66E254DB1AB00CBB9E0 /* Gradients.swift */; };
+		22A5E673254DE98600CBB9E0 /* FavoritePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A5E672254DE98500CBB9E0 /* FavoritePage.swift */; };
+		22A9ED14254E7970008441F2 /* 3DModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A9ED13254E7970008441F2 /* 3DModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2228C634254E9B8700272F96 /* Heart.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = Heart.usdz; path = ../../../../../Downloads/Heart.usdz; sourceTree = "<group>"; };
 		22A5E589254D1A1000CBB9E0 /* ARhack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARhack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A5E58C254D1A1000CBB9E0 /* ARhackApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARhackApp.swift; sourceTree = "<group>"; };
 		22A5E58E254D1A1000CBB9E0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +42,10 @@
 		22A5E60F254D582100CBB9E0 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		22A5E612254D59AF00CBB9E0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		22A5E615254D5DC800CBB9E0 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		22A5E669254DAE9600CBB9E0 /* KeyboaedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboaedManager.swift; sourceTree = "<group>"; };
+		22A5E66E254DB1AB00CBB9E0 /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
+		22A5E672254DE98500CBB9E0 /* FavoritePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePage.swift; sourceTree = "<group>"; };
+		22A9ED13254E7970008441F2 /* 3DModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 3DModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +78,9 @@
 		22A5E58B254D1A1000CBB9E0 /* ARhack */ = {
 			isa = PBXGroup;
 			children = (
+				22A9ED12254E791D008441F2 /* 3DModel */,
+				22A5E66D254DB18C00CBB9E0 /* Gradients */,
+				22A5E668254DAE8800CBB9E0 /* Keyboard */,
 				22A5E618254D610500CBB9E0 /* Router */,
 				22A5E60A254D57B900CBB9E0 /* Subject */,
 				22A5E5A1254D2A3E00CBB9E0 /* Components */,
@@ -96,6 +109,7 @@
 				22A5E5A6254D2CF300CBB9E0 /* LoginPage.swift */,
 				22A5E606254D571500CBB9E0 /* SubjectPage.swift */,
 				22A5E615254D5DC800CBB9E0 /* HomePage.swift */,
+				22A5E672254DE98500CBB9E0 /* FavoritePage.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -123,6 +137,31 @@
 			children = (
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		22A5E668254DAE8800CBB9E0 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				22A5E669254DAE9600CBB9E0 /* KeyboaedManager.swift */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		22A5E66D254DB18C00CBB9E0 /* Gradients */ = {
+			isa = PBXGroup;
+			children = (
+				22A5E66E254DB1AB00CBB9E0 /* Gradients.swift */,
+			);
+			path = Gradients;
+			sourceTree = "<group>";
+		};
+		22A9ED12254E791D008441F2 /* 3DModel */ = {
+			isa = PBXGroup;
+			children = (
+				2228C634254E9B8700272F96 /* Heart.usdz */,
+				22A9ED13254E7970008441F2 /* 3DModel.swift */,
+			);
+			path = 3DModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +223,7 @@
 			files = (
 				22A5E594254D1A1200CBB9E0 /* Preview Assets.xcassets in Resources */,
 				22A5E591254D1A1200CBB9E0 /* Assets.xcassets in Resources */,
+				2228C635254E9B8700272F96 /* Heart.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,10 +240,14 @@
 				22A5E60C254D57C800CBB9E0 /* Subject.swift in Sources */,
 				22A5E58D254D1A1000CBB9E0 /* ARhackApp.swift in Sources */,
 				22A5E616254D5DC800CBB9E0 /* HomePage.swift in Sources */,
+				22A9ED14254E7970008441F2 /* 3DModel.swift in Sources */,
 				22A5E607254D571500CBB9E0 /* SubjectPage.swift in Sources */,
 				22A5E610254D582100CBB9E0 /* Topic.swift in Sources */,
 				22A5E5A7254D2CF300CBB9E0 /* LoginPage.swift in Sources */,
+				22A5E66A254DAE9600CBB9E0 /* KeyboaedManager.swift in Sources */,
+				22A5E673254DE98600CBB9E0 /* FavoritePage.swift in Sources */,
 				22A5E59E254D28B000CBB9E0 /* SearchPage.swift in Sources */,
+				22A5E66F254DB1AB00CBB9E0 /* Gradients.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +377,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ARhack/Preview Content\"";
+				DEVELOPMENT_TEAM = FY37H2WPD9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ARhack/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -354,6 +399,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ARhack/Preview Content\"";
+				DEVELOPMENT_TEAM = FY37H2WPD9;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ARhack/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

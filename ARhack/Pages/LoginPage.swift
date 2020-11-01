@@ -9,8 +9,12 @@ import SwiftUI
 
 struct LoginPage: View {
     
+    @ObservedObject private var keyboard = KeyboardResponder()
+    
     @State private var userName: String = ""
     @State private var password: String = ""
+    
+    @State private var isAlert: Bool = false
     
     @Binding var page: String
     
@@ -20,11 +24,11 @@ struct LoginPage: View {
             
             Color.white
             
-            VStack(spacing: 25) {
+            VStack(spacing: 15) {
                 
                 VStack(spacing: 20) {
-                    
-                    Text("AR Education")
+                        
+                    Text("AReds")
                         .font(.system(size: 36))
                         .bold()
                     
@@ -40,6 +44,7 @@ struct LoginPage: View {
                         .overlay(Capsule()
                                     .stroke(Color.secondary, lineWidth: 1)
                                     .frame(width: 320, height: 30))
+                        .keyboardType(.numberPad)
                     
                     
                 }
@@ -51,12 +56,12 @@ struct LoginPage: View {
                 
                 Button(action: {
                     
-                    if self.userName == "Hackmaster" && self.password == "1234" {
+                    if self.userName == "Devdisrupt" && self.password == "1234" {
                         
                         self.page = "Home"
                         
                     } else {
-                        print("wrong username or password")
+                        self.isAlert.toggle()
                     }
                     
                     
@@ -64,17 +69,24 @@ struct LoginPage: View {
                     Text("Login")
                         .frame(width: 330, height: 30, alignment: .center)
                         .foregroundColor(.white)
+                        .padding(.vertical, 5)
                         .background(Color.black)
                         .cornerRadius(20)
                         .shadow(radius: 15)
                 })
             }
-            
-            
-            
+            .padding(.bottom, keyboard.currentHeight)
+            .animation(.easeOut)
+            .colorScheme(.light)
+            .alert(isPresented: $isAlert, content: {
+                Alert(title: Text("AReds"), message: Text("Wrong username or password"), dismissButton: .default(Text("OK")))
+            })
             
         }
         .ignoresSafeArea(.all)
+        .onTapGesture {
+            self.hideKeyboard()
+        }
         
     }
 }

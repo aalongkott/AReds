@@ -9,6 +9,10 @@ import SwiftUI
 
 struct HomePage: View {
     
+    let images = ["img1", "img2", "img3"]
+    
+    @Binding var page: String
+    
     var body: some View {
         
         NavigationView {
@@ -19,31 +23,61 @@ struct HomePage: View {
                     
                     Spacer()
                     
-                    Image(systemName: "gear")
-                        .font(.system(size: 28))
+                    Image(systemName: "power")
+                        .font(.system(size: 20))
+                        .onTapGesture {
+                            self.page = "Login"
+                        }
                     
                 }
                 .padding()
                 
-                Text("Hello")
+                
+                ScrollView {
+                    
+                    ForEach(images, id: \.self) { img in
+                        
+                        Image(img)
+                            .resizable()
+                            .frame(width: 340, height: 165, alignment: .center)
+                            .cornerRadius(15)
+                            .padding(.bottom, 20)
+                            .animation(.linear)
+                        
+                    }
+                    
+                }
                 
                 Spacer()
                 
                 HStack(spacing: 120) {
                     
-                    Image(systemName: "house")
+                    Button(action: {
+                        self.page = "Search"
+                    }, label: {
+                        Image(systemName: "list.bullet")
+                            .font(.system(size: 28))
+                            .foregroundColor(Color.secondary.opacity(0.3))
+                    })
+                    
+                    Image(systemName: "house.fill")
                         .font(.system(size: 28))
                     
-                    Image(systemName: "list.bullet")
-                        .font(.system(size: 28))
                     
-                    Image(systemName: "star")
-                        .font(.system(size: 28))
+                    Button(action: {
+                        self.page = "Favorite"
+                    }, label: {
+                        Image(systemName: "star")
+                            .font(.system(size: 28))
+                            .foregroundColor(Color.secondary.opacity(0.3))
+                    })
                 }
+                .padding(.vertical)
                 
                 
             }
             .navigationBarTitle("AR Education")
+            .colorScheme(.light)
         }
         
     }
@@ -51,6 +85,6 @@ struct HomePage: View {
 
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {
-        HomePage()
+        HomePage(page: .constant("Home"))
     }
 }

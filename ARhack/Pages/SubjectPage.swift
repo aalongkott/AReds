@@ -9,28 +9,40 @@ import SwiftUI
 
 struct SubjectPage: View {
     
-    var subject: Subject
+    let colors: [Int: GradientsHolder.gradient] = [
+        
+        0: GradientsHolder.gradient.first,
+        1: GradientsHolder.gradient.second,
+        2: GradientsHolder.gradient.third
+        
+    ]
+    
+    @Binding var favorites: [Topic]
+    
+    @Binding var page: String
+    
+    @Binding var lastPage: String
+    
+    var subject: String
+    
+    var topics: [Topic]
     
     var body: some View {
         
-        NavigationView {
             
-            ScrollView {
-               
-                ForEach(subject.topics, id: \.id) { topic in
-                    DetailView(topic: topic)
-                }
+        ScrollView {
+           
+            ForEach(self.topics, id: \.id) { topic in
+                
+                DetailView(color: colors[Int.random(in: 1...10) % 3] ?? GradientsHolder.gradient.second, topic: topic, favorites: $favorites, page: $page, lastPage: $lastPage)
+                    
                 
             }
-            .navigationBarTitle(subject.text, displayMode: .inline)
+            .padding(.top, 20)
+            
         }
-    }
-}
-
-struct SubjectPage_Previews: PreviewProvider {
-    
-    
-    static var previews: some View {
-        SubjectPage(subject: Subject(text: "Math", topics: [Topic(name: "Calculus", detail: "asdasdasdasdasd"), Topic(name: "Calculus", detail: "asdasdasdasdasd"), Topic(name: "Calculus", detail: "asdasdasdasdasd")]))
+        .navigationBarTitle(subject, displayMode: .inline)
+        .colorScheme(.light)
+        
     }
 }
