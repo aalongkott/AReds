@@ -1,3 +1,6 @@
+In this project, we use AR source from below : 
+
+
 # AR Tutorial Part 3 - Hit detection, planes and text
 
 In this final post of the series, we take a look at how to detect planes, touches within them, and how to place items on them. Follow the [tutorial at the Nike S23NYC Engineering blog](https://medium.com/s23nyc-tech).
